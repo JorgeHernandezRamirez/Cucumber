@@ -6,6 +6,7 @@ import com.jorgehernandezramirez.bdd.cucumber.service.IUserService;
 import com.jorgehernandezramirez.bdd.cucumber.service.InMemmoryUserService;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
@@ -16,7 +17,8 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(classes = UserConfiguration.class)
 public class FilterUserSteps {
 
-    private IUserService userService = new InMemmoryUserService();
+    @Autowired
+    private IUserService userService;
 
     private List<UserDto> usersWithRolUser;
 
