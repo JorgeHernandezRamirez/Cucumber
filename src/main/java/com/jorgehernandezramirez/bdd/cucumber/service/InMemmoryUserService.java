@@ -15,12 +15,12 @@ public class InMemmoryUserService implements IUserService {
     }
 
     @Override
-    public List<UserDto> obtenerUsuarios() {
+    public List<UserDto> getUsers() {
         return USERS;
     }
 
     @Override
-    public UserDto obtenerUsuario(final String id) {
+    public UserDto getUser(final String id) {
         final Optional<UserDto> userDtoOptional = USERS.stream().filter(userDto -> id.equals(userDto.getId())).findFirst();
         if(userDtoOptional.isPresent()){
             return userDtoOptional.get();
@@ -29,22 +29,22 @@ public class InMemmoryUserService implements IUserService {
     }
 
     @Override
-    public void guardarUsuario(UserDto userDto) {
-        if(!existeUsuario(userDto.getId())) {
+    public void save(UserDto userDto) {
+        if(!userExists(userDto.getId())) {
             USERS.add(userDto);
         }
     }
 
     @Override
-    public void actualizarUsuario(final UserDto userDto) {
-        final UserDto usuarioAActualizar = obtenerUsuario(userDto.getId());
-        if(usuarioAActualizar != null){
-            usuarioAActualizar.setNombre(userDto.getNombre());
-            usuarioAActualizar.setSalario(userDto.getSalario());
+    public void update(final UserDto userDto) {
+        final UserDto userToUpdate = getUser(userDto.getId());
+        if(userToUpdate != null){
+            userToUpdate.setName(userDto.getName());
+            userToUpdate.setSalary(userDto.getSalary());
         }
     }
 
-    private Boolean existeUsuario(final String id){
-        return obtenerUsuario(id) != null;
+    private Boolean userExists(final String id){
+        return getUser(id) != null;
     }
 }

@@ -13,24 +13,24 @@ public interface IUserService {
      * Método que devuelve los usuarios del sistema
      * @return
      */
-    List<UserDto> obtenerUsuarios();
+    List<UserDto> getUsers();
 
     /**
      * Método que devuelve un usuario del sistema
      * @param id
      * @return
      */
-    UserDto obtenerUsuario(String id);
+    UserDto getUser(String id);
 
     /**
      * Método que guarda un usuario en el sistema
      * @param userDto
      */
-    void guardarUsuario(UserDto userDto);
+    void save(UserDto userDto);
 
     /**
      * Método que actualiza un usuario en el sistema
      * @param userDto
      */
-    void actualizarUsuario(UserDto userDto);
+    void update(UserDto userDto);
 }

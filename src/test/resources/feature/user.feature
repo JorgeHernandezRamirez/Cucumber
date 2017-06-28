@@ -2,7 +2,7 @@ Feature: Gestión usuarios
 
   Scenario: Modificación salario usuario
     Given dado los siguientes usuarios en el sistema
-      | id  | nombre      | rol    | salario |
+      | id  | name        | rol      | salary |
       | 1   | Jorge       | USER   | 18000   |
       | 2   | Jose        | USER   | 20000   |
       | 3   | Admin       | ADMIN  | 40000   |
@@ -11,7 +11,7 @@ Feature: Gestión usuarios
 
   Scenario: Obtener número de usuarios con rol USER
     Given dado los siguientes usuarios en el sistema
-      | id  | nombre      | rol    | salario |
+      | id  | name        | rol    | salary |
       | 1   | Jorge       | USER   | 18000   |
       | 2   | Jose        | USER   | 20000   |
       | 3   | Admin       | ADMIN  | 40000   |

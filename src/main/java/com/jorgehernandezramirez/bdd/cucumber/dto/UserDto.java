@@ -1,26 +1,24 @@
 package com.jorgehernandezramirez.bdd.cucumber.dto;
 
-import java.util.Date;
-
 public class UserDto {
 
     private String id;
 
-    private String nombre;
+    private String name;
 
     private String rol;
 
-    private Double salario;
+    private Double salary;
 
     public UserDto(){
         super();
     }
 
-    public UserDto(String id, String nombre, String rol, Double salario) {
+    public UserDto(String id, String name, String rol, Double salary) {
         this.id = id;
-        this.nombre = nombre;
+        this.name = name;
         this.rol = rol;
-        this.salario = salario;
+        this.salary = salary;
     }
 
     public String getId() {
@@ -31,20 +29,12 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(Double salario) {
-        this.salario = salario;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRol() {
@@ -55,6 +45,14 @@ public class UserDto {
         this.rol = rol;
     }
 
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,18 +61,18 @@ public class UserDto {
         UserDto userDto = (UserDto) o;
 
         if (id != null ? !id.equals(userDto.id) : userDto.id != null) return false;
-        if (nombre != null ? !nombre.equals(userDto.nombre) : userDto.nombre != null) return false;
+        if (name != null ? !name.equals(userDto.name) : userDto.name != null) return false;
         if (rol != null ? !rol.equals(userDto.rol) : userDto.rol != null) return false;
-        return salario != null ? salario.equals(userDto.salario) : userDto.salario == null;
+        return salary != null ? salary.equals(userDto.salary) : userDto.salary == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (nombre != null ? nombre.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (rol != null ? rol.hashCode() : 0);
-        result = 31 * result + (salario != null ? salario.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
         return result;
     }
 
@@ -82,9 +80,9 @@ public class UserDto {
     public String toString() {
         return "UserDto{" +
                 "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
+                ", name='" + name + '\'' +
                 ", rol='" + rol + '\'' +
-                ", salario=" + salario +
+                ", salary=" + salary +
                 '}';
     }
 }
